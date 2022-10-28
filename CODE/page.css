@@ -60,6 +60,12 @@ nav > .nav-section {
     border-bottom-right-radius: 25px;
 }
 
+.nav-link:hover, #active {
+    background-color: var(--main-colour-hover);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
 main {
     box-sizing: border-box;
     padding: 1rem 1rem;
@@ -81,6 +87,10 @@ article {
     display: flex;
     flex-direction: column;
     height: 100%;
+}
+
+#kanban-forum {
+  flex-basis: calc(2 * (100%/3));
 }
 
 
