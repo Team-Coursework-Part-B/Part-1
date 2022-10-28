@@ -1,0 +1,175 @@
+:root {
+    --background-colour: rgb(240, 240, 240);
+    --main-colour: rgb(240,138,130);
+    --main-colour-hover: rgb(204, 102, 94);
+    --task-border: rgb(168, 168, 168);
+}
+
+h1, h2, h3, a, p, span, button {
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    color: white;
+}
+
+a {
+    text-decoration:none;
+ }
+
+body {
+    background-color: var(--background-colour);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0px;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom: 1px solid var(--main-colour);
+    background-color: var(--main-colour);
+}
+
+nav > .nav-section {
+    display: flex;
+    text-align: center;
+}
+
+#nav-logo-section {
+    flex-basis: 100px;
+}
+
+#nav-link-section {
+    flex-grow: 1;
+}
+
+.nav-link {
+    flex-basis: calc(100%/3);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3rem 2rem;
+}
+
+.nav-link:hover {
+    background-color: var(--main-colour-hover);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+main {
+    box-sizing: border-box;
+    padding: 1rem 1rem;
+    flex-grow: 1;
+    width: 100%;
+    overflow: hidden;
+}
+
+article {
+    display: flex;
+    gap: 1rem;
+    height: 100%;
+}
+.kanban{
+    border: 1px solid white;
+    background-color: white;
+    flex-basis: calc(100%/3);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+.kanban-list{
+    height: 100%;
+    display: grid;
+    gap: 1rem;
+    overflow:hidden;
+    overflow-y: auto;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.kanban-title {
+    padding-left: 1.5rem;
+    height: 10%;
+}
+
+.kanban-add {
+    height: 10%;
+    display: flex;
+    padding-bottom: 1rem;
+}
+
+.kanban-title > h1 {
+    color: black;
+    font-size: 30px;
+    padding-bottom: 1rem;
+}
+
+#forum-title > h1 {
+	color:black;
+	display: flex;
+	justify-content: center;
+}
+
+
+
+.kanban-item, .list-content{
+    background-color: var(--background-colour);
+    border-radius: 10px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 5rem;
+    border-bottom: 2px solid var(--task-border);
+}
+
+.list-content {
+  width: 90%;
+  margin-right: 10px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.kanban-add-button {
+    border: none;
+    background-color: rgb(17, 24, 39);
+    color: white;
+    height: 90%;
+    width: 90%;
+    margin: auto;
+    border-radius: 10px;
+    font-size: 35px;
+    border-bottom: 1px solid var(--task-border);
+}
+
+.kanban-add-button:hover {
+    background-color: rgb(14, 19, 31);
+    color: grey;
+}
+
+.list-content p, h4{
+  display: flex;
+  line-height: normal;
+  vertical-align: middle;
+}
+
+.forum-content-title {
+  text-align: left;
+}
+
+
+.forum-content-text {
+  text-align: right;
+}
+
+.forum-content-text {
+  text-align: right;
+}
