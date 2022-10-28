@@ -54,7 +54,7 @@ nav > .nav-section {
     padding: 3rem 2rem;
 }
 
-.nav-link:hover {
+.nav-link:hover, #active {
     background-color: var(--main-colour-hover);
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
