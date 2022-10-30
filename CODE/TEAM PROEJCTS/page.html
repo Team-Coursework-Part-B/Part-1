@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="page.css">
+  <script src="page.js"></script>
+</head>
+
+<body>
+<nav>
+    <div id="nav-link-section" class="nav-section">
+      <a class="nav-link", href="#">Your TO-DO List</a>
+      <a class="nav-link", href="#">Your Tasks</a>
+      <a class="nav-link", href="#">Forum</a>
+    </div>
+</nav>
+
+<main>
+
+  <article>
+    <div class="kanban", id="kanban-todo">
+      <div class="kanban-title"><h1><b>To do</b></h1></div>
+      <div class="kanban-list", id="kanban-todolist">
+      </div>
+      <div class="kanban-add"><button class="kanban-add-button", type="button", onclick="make_button()">Add+</button></div>
+    </div>
+
+    <div class="kanban", id="kanban-doing">
+      <div class="kanban-title"><h1><b>Doing</b></h1></div>
+      <div class="kanban-list">
+      </div>
+    </div>
+
+    <div class="kanban", id="kanban-done">
+      <div class="kanban-title"><h1><b>Done</b></h1></div>
+      <div class="kanban-list">
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<div id="overlay" class="overlay">
+
+<label for="nextTrello">Please kill yourself</label>
+<input type="text" id="nextTrello" name="nextTrello">
+
+<button type="button" onclick="break_button()", class="kanban-add-button">Kill Yourself</button>
+<button type="button" onclick="cancel_button()", class="kanban-add-button" >Cancel</button>
+
+
+</div>
+
+</body>
+
+</html>
