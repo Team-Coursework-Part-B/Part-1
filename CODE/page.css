@@ -239,6 +239,14 @@ article {
     margin-left: auto;
 }
 
+.kanban-item-button {
+    height: 0.5rem;
+    width: 0.5rem;
+    align-self:center;
+    display: flex;
+    justify-content: center;
+}
+
 .kanban-date-posted, .kanban-item-button > i {
     align-self: center
 }
