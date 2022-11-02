@@ -2,44 +2,72 @@
 <html>
 <head>
   <link rel="stylesheet" href="page.css">
+  <script src="page.js"></script>
+  <script src="https://kit.fontawesome.com/127f7c8d0a.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload="updateCounters()">
 <nav>
-    <div id="nav-link-section" class="nav-section">
-      <a class="nav-link". id="active">Your TO-DO List</a>
-      <a class="nav-link", href="#">Productivity Manager</a>
-      <a class="nav-link", href="forum.html">Knowledge Manager</a>
-    </div>
+  <div id="nav-logo-section">
+    <img src="Logo.png">
+  </div>
+  <div id="nav-link-section" class="nav-section">
+    <a class="nav-link", id="active">Personal Task List</a>
+    <a class="nav-link", href="#">Project Task List</a>
+    <a class="nav-link", href="forum.html">Forum</a>
+  </div>
 </nav>
 
 <main>
-
   <article>
+    <div class="sidebar">
+      <div class="sidebar-counter">
+        <div class="sidebar-counter-number", id="sidebar-todo-counter"><p></p></div>
+        <div class="sidebar-counter-label"><p>To Do</p></div>
+      </div>
+      <div class="sidebar-counter">
+        <div class="sidebar-counter-number", id="sidebar-doing-counter"><p></p></div>
+        <div class="sidebar-counter-label"><p>Doing</p></div>
+      </div>
+      <div class="sidebar-counter">
+        <div class="sidebar-counter-number", id="sidebar-done-counter"><p></p></div>
+        <div class="sidebar-counter-label"><p>Done</p></div>
+      </div>
+      <div class="sidebar-counter">
+        <div class="sidebar-counter-number", id="sidebar-total-counter"><p></p></div>
+        <div class="sidebar-counter-label"><p>Total</p></div>
+      </div>
+    </div>
+
     <div class="kanban", id="kanban-todo">
       <div class="kanban-title"><h1><b>To do</b></h1></div>
-      <div class="kanban-list">
-        <div class="kanban-item"></div>
-        <div class="kanban-item"></div>
-        <div class="kanban-item"></div>
-      </div>
-      <div class="kanban-add"><button class="kanban-add-button", type="button">Add+</button></div>
+      <div class="kanban-list", id="kanban-todolist"></div>
+      <div class="kanban-add"><button id="kanban-add-button", type="button", onclick="make_button()">Add+</button></div>
     </div>
 
     <div class="kanban", id="kanban-doing">
       <div class="kanban-title"><h1><b>Doing</b></h1></div>
-      <div class="kanban-list">
-      </div>
+      <div class="kanban-list", id="kanban-doinglist"></div>
     </div>
 
     <div class="kanban", id="kanban-done">
-      <div class="kanban-title"><h1><b>Forum</b></h1></div>
-      <div class="kanban-list">
-      </div>
+      <div class="kanban-title"><h1><b>Done</b></h1></div>
+      <div class="kanban-list", id="kanban-donelist"></div>
     </div>
   </article>
-
 </main>
+
+<div class="overlay" id="overlay">
+  <div id="todo-overlay-box">
+    <div id="todo-overlay-box-loginline">
+      <label for="todo-overlay-input">Task Description:</label>
+      <textarea type="text" id="todo-overlay-input" name="todo-overlay-input"></textarea>
+    </div>
+    <button type="button" onclick="break_button()">Add Task</button>
+    <button type="button" onclick="cancel_button()">Cancel</button>
+  </div>
+</div>
+
 </body>
 
 </html>
