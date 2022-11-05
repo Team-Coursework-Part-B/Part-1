@@ -9,38 +9,56 @@
 <body>
 
 <script>
-
+function validateForm() {
+  let E = document.getElementById("email").value;
+  let P = document.getElementById("password").value;
+  if (E == "test@email.com" && P == "p") {
+    window.location.replace('page.html');
+  } 
+  else {
+    alert("Incorrect Email/Password")
+  }
+}
 </script>
 
 <h1>Welcome to Make-It-All Ltd!</h1>
 <p>Please Login Below</p>
 
 <body class="MainForm" id="MainForm">
-<form action="login_page_php.php" method="POST">
+  <!--<form method="post"> -->
   
     <div class="FormContainer">
       <label for="email"><b>Email</b></label>
       <br>
       <br>
-      <input type="text" placeholder="Enter Email" name="email" required>
+      <input id ="email" type="email" placeholder="Enter Email" name="email" required>
       <br>
       <br>
-      <label for="pword"><b>Password</b></label>
+      <label for="password"><b>Password</b></label>
       <br>
       <br>
-      <input type="password" placeholder="Enter Password" name="pword" required>
+      <input id="password" type="password" placeholder="Enter Password" name="password" required>
   
       
     </div>
   
     <div class="ButtonContainer">
-      <button type="submit" class="LoginButton">Login</button>
+      <button type="submit" class="LoginButton" onclick="validateForm()">Login</button>
     </div>
   </form> 
 </body>
 
+<body class="FormContainer">
+<!--<form action="create_account.html" method="POST">-->
+  <div class="ButtonContainer">
+    <button type="submit" class="LoginButton" onclick="window.location.replace('create_account.html')">Create Account</button>
+  </div>
 </body>
+
+</body>
+
+
+
 </html> 
 
-<!-- 26/10/2022 ernie : php isnt done yet waiting for the next page after login to sort that out, just have like testuser as a login
-right now its like a login page which does nothing-->
+<!-- 05/11/2022 ernie : password : p email : test@email.com-->
