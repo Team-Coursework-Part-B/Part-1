@@ -10,6 +10,7 @@ function break_button() {
     if (todoText!="") {
         var newDiv = document.createElement("div");
         newDiv.setAttribute("class", "kanban-item");
+        newDiv.classList.add("personal");
         newDiv.innerHTML = "<div class=\"kanban-item-text\"><p><b>"+todoText+"</b></p></div><div class=\"kanban-item-buttons\"><button class=\"kanban-item-moveDeleteButton kanban-item-button\" ,type=\"button\" onclick=\"delete_todoItem_button(this)\"><i class=\"fa-solid fa-trash\"></i></button><div class=\"kanban-item-leftRightButtons\"><button class=\"kanban-item-moveLeftButton kanban-item-button\" , type=\"button\" onclick=\"moveLeft_todoItem_button(this)\"><i class=\"fa-solid fa-left-long\"></i></button><button class=\"kanban-item-moveRightButton kanban-item-button\" ,type=\"button\" onclick=\"moveRight_todoItem_button(this)\"><i class=\"fa-solid fa-right-long\"></i></button></div></div>";
         todolist.appendChild(newDiv);
         document.getElementById("overlay").style.display = "none";
@@ -43,6 +44,12 @@ function moveRight_todoItem_button(button) {
     newDiv.setAttribute("class","kanban-item");
     newDiv.innerHTML = buttonParent.innerHTML;
 
+    if (buttonParent.classList.contains("personal")) {
+        newDiv.classList.add("personal");
+    } else if (buttonParent.classList.contains("delegated")) {
+        newDiv.classList.add("delegated");
+    }
+
     kanban_col.appendChild(newDiv);
     buttonParent.remove();
     updateCounters();
@@ -61,19 +68,62 @@ function moveLeft_todoItem_button(button) {
     newDiv.setAttribute("class","kanban-item");
     newDiv.innerHTML = buttonParent.innerHTML;
 
+    if (buttonParent.classList.contains("personal")) {
+        newDiv.classList.add("personal");
+    } else if (buttonParent.classList.contains("delegated")) {
+        newDiv.classList.add("delegated");
+    }
+
     kanban_col.appendChild(newDiv);
     buttonParent.remove();
     updateCounters();
 };
 
-function updateCounters() {
-    var todoAmount = document.getElementById("kanban-todolist").childNodes.length;
-    var doingAmount = document.getElementById("kanban-doinglist").childNodes.length;
-    var doneAmount = document.getElementById("kanban-donelist").childNodes.length;
-    var total = todoAmount + doingAmount + doneAmount;
+function personal_or_delegated(element) {
+    var children = element.childNodes;
+    var personal = 0;
+    var project = 0;
+    for (let i=0; i<children.length; ++i) {
+        if (children[i].classList.contains("personal")) {
+            personal = personal+1;
+        } else if (children[i].classList.contains("delegated")) {
+            project = project+1;
+        }
+    }
+    var amountList = [personal,project];
+    return amountList;
+}
 
-    document.getElementById("sidebar-todo-counter").firstChild.innerHTML = todoAmount;
-    document.getElementById("sidebar-doing-counter").firstChild.innerHTML = doingAmount;
-    document.getElementById("sidebar-done-counter").firstChild.innerHTML = doneAmount;
-    document.getElementById("sidebar-total-counter").firstChild.innerHTML = total;
+function updateCounters() {
+    var todo = document.getElementById("kanban-todolist");
+    var todoCounts = personal_or_delegated(todo);
+    var doing = document.getElementById("kanban-doinglist");
+    var doingCounts = personal_or_delegated(doing);
+    var done = document.getElementById("kanban-donelist");
+    var doneCounts = personal_or_delegated(done);
+
+    document.getElementById("sidebar-todo-counter-personal").firstChild.innerHTML = todoCounts[0];
+    document.getElementById("sidebar-doing-counter-personal").firstChild.innerHTML = doingCounts[0];
+    document.getElementById("sidebar-done-counter-personal").firstChild.innerHTML = doneCounts[0];
+    document.getElementById("sidebar-total-counter-personal").firstChild.innerHTML = todoCounts[0]+doingCounts[0]+doneCounts[0];
+
+    document.getElementById("sidebar-todo-counter-delegated").firstChild.innerHTML = todoCounts[1];
+    document.getElementById("sidebar-doing-counter-delegated").firstChild.innerHTML = doingCounts[1];
+    document.getElementById("sidebar-done-counter-delegated").firstChild.innerHTML = doneCounts[1];
+    document.getElementById("sidebar-total-counter-delegated").firstChild.innerHTML = todoCounts[1]+doingCounts[1]+doneCounts[1];
+};
+
+function resourceUpdate(box) {
+    if (box.classList.contains("resourceBoxClicked")) {
+        box.classList.remove("resourceBoxClicked");
+    } else {
+        box.classList.add("resourceBoxClicked")
+    }
+};
+
+function increaseProgress(bar) {
+    computedStyle = getComputedStyle(bar);
+    width = parseFloat(computedStyle.getPropertyValue("--width")) || 0;
+    if (width==100) {width=0};
+    bar.style.setProperty("--width", width+10);
 }
