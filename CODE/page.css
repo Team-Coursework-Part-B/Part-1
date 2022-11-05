@@ -210,6 +210,16 @@ article {
     overflow-x: hidden;
 }
 
+.personal {
+    background-color: var(--background-colour);
+    border-bottom: 2px solid var(--task-border);
+}
+
+.delegated {
+    background-color: rgb(162,226,255);
+    border-bottom: 2px solid rgb(4,140,196);
+}
+
 .kanban-item-text {
 	padding: 1rem 1rem;
     overflow-x: hidden;
