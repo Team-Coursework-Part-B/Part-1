@@ -14,7 +14,7 @@
   <div id="nav-link-section" class="nav-section">
     <a class="nav-link", id="active">Task List</a>
     <a class="nav-link", href="project.html">Project List</a>
-    <a class="nav-link", href="forum.html">Forum</a>
+    <a class="nav-link", href="forum.html">Knowledge Manager</a>
   </div>
 </nav>
 
@@ -22,26 +22,42 @@
   <article>
     <div class="sidebar">
       <div class="sidebar-counter">
-        <div class="sidebar-counter-number", id="sidebar-todo-counter"><p></p></div>
+        <div class="sidebar-counter-number", id="sidebar-todo-counter-personal"><p></p></div>
         <div class="sidebar-counter-label"><p>To Do</p></div>
       </div>
       <div class="sidebar-counter">
-        <div class="sidebar-counter-number", id="sidebar-doing-counter"><p></p></div>
+        <div class="sidebar-counter-number", id="sidebar-doing-counter-personal"><p></p></div>
         <div class="sidebar-counter-label"><p>Doing</p></div>
       </div>
       <div class="sidebar-counter">
-        <div class="sidebar-counter-number", id="sidebar-done-counter"><p></p></div>
+        <div class="sidebar-counter-number", id="sidebar-done-counter-personal"><p></p></div>
         <div class="sidebar-counter-label"><p>Done</p></div>
       </div>
       <div class="sidebar-counter">
-        <div class="sidebar-counter-number", id="sidebar-total-counter"><p></p></div>
+        <div class="sidebar-counter-number", id="sidebar-total-counter-personal"><p></p></div>
+        <div class="sidebar-counter-label"><p>Total</p></div>
+      </div>
+      <div class="sidebar-counter delegated">
+        <div class="sidebar-counter-number", id="sidebar-todo-counter-delegated"><p></p></div>
+        <div class="sidebar-counter-label"><p>To Do</p></div>
+      </div>
+      <div class="sidebar-counter delegated">
+        <div class="sidebar-counter-number", id="sidebar-doing-counter-delegated"><p></p></div>
+        <div class="sidebar-counter-label"><p>Doing</p></div>
+      </div>
+      <div class="sidebar-counter delegated">
+        <div class="sidebar-counter-number", id="sidebar-done-counter-delegated"><p></p></div>
+        <div class="sidebar-counter-label"><p>Done</p></div>
+      </div>
+      <div class="sidebar-counter delegated">
+        <div class="sidebar-counter-number", id="sidebar-total-counter-delegated"><p></p></div>
         <div class="sidebar-counter-label"><p>Total</p></div>
       </div>
     </div>
 
     <div class="kanban", id="kanban-todo">
       <div class="kanban-title"><h1><b>To do</b></h1></div>
-      <div class="kanban-list", id="kanban-todolist"></div>
+      <div class="kanban-list", id="kanban-todolist"><div class="kanban-item delegated"><div class="kanban-item-text"><p><b>Do work x.</b></p></div><div class="kanban-item-buttons"><button class="kanban-item-moveDeleteButton kanban-item-button" ,type="button" onclick="delete_todoItem_button(this)"><i class="fa-solid fa-trash"></i></button><div class="kanban-item-leftRightButtons"><button class="kanban-item-moveLeftButton kanban-item-button" ,="" type="button" onclick="moveLeft_todoItem_button(this)"><i class="fa-solid fa-left-long"></i></button><button class="kanban-item-moveRightButton kanban-item-button" ,type="button" onclick="moveRight_todoItem_button(this)"><i class="fa-solid fa-right-long"></i></button></div></div></div></div>
       <div class="kanban-add"><button id="kanban-add-button", type="button", onclick="make_button()">Add+</button></div>
     </div>
 
