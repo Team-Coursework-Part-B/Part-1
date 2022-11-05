@@ -129,6 +129,10 @@ article {
     flex-basis: 50%;
 }
 
+.sidebar > .delegated {
+    border-bottom: none;
+}
+
 .kanban {
     border: 1px solid white;
     background-color: white;
