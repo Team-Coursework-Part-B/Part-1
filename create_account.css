@@ -1,0 +1,40 @@
+*{margin:0;padding:0}
+body{
+    background-color:#f08a82;
+}
+
+.FormOutline{
+    width:280px;
+    height:auto;
+    padding:30px 40px;
+    background-color:#ffffff;
+    border-radius:20px;
+    box-shadow:0 0 10px 0 #000000;
+    margin:auto;
+    position:relative;
+}
+
+ul.list{
+    list-style-type: none;
+    text-align: center;
+    width: 280px;
+}
+
+ul.list li{
+    margin-bottom:15px;
+}
+
+ul.list li input{
+    width: 280px;
+    text-align: center;
+    padding: 10px 0px;
+    border: none;
+    background-color: #b8b2b2;
+    border-radius: 8px;
+}
+
+ul.list li input[type="submit"]{
+    background-color:#f08a82;
+    color:#ffffff;
+}
+
