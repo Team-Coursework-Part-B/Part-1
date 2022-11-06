@@ -127,3 +127,20 @@ function increaseProgress(bar) {
     if (width==100) {width=0};
     bar.style.setProperty("--width", width+10);
 }
+
+function viewTasks(button) {
+	var employeeNode = button.parentNode;
+	var employeeName = employeeNode.querySelector(".employee-name").innerHTML.split(' ')[0].toLowerCase() + "-" + employeeNode.querySelector(".employee-name").innerHTML.split(' ')[1].toLowerCase();
+	
+	document.getElementById(employeeName).style.display = "flex";
+}
+
+function managerTaskAdd(kanbanID) {
+	var kanbanDiv = kanbanID.querySelector(".kanban");
+	var todoText = kanbanID.querySelector(".dashboard-overlay-input").querySelector("textarea").value;
+	
+	var newDiv = document.createElement("div");
+	newDiv.setAttribute("class", "kanban-item");
+	newDiv.innerHTML = "<div class=\"kanban-item-text\"><p><b>"+todoText+"</b></p></div><div class=\"kanban-item-buttons\"><button class=\"kanban-item-moveDeleteButton kanban-item-button\" ,type=\"button\" onclick=\"delete_todoItem_button(this)\"><i class=\"fa-solid fa-trash\"></i></button></div>";
+	kanbanDiv.appendChild(newDiv);
+}
