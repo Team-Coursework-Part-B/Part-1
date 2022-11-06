@@ -21,8 +21,8 @@
 
  <?php
 
-$isManager = $_GET["isManager"];
-if  ($isManager) {
+$isManager = $_POST["email"];
+if  ($isManager == "manager@email.com") {
 	echo '<style type="text/css">
 		#manager-navbar {
             display: inline;
