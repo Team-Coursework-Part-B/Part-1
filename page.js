@@ -21,8 +21,8 @@ function break_button() {
     document.getElementById("todo-overlay-input").value = "";
 };
 
-function cancel_button() {
-	document.getElementById("overlay").style.display = "none";
+function cancel_button(button) {
+	button.parentNode.parentNode.style.display = "none";
 };
 
 function delete_todoItem_button(button) {
