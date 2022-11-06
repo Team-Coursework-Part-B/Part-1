@@ -574,3 +574,44 @@ input[type="checkbox"]:focus {
     display: flex;
     flex-direction: column;
 }
+
+.dashboard-overlay-box {
+    border-radius: 25px;
+    background-color: var(--background-colour);
+    height: 60%;
+    width: 70%;
+    margin: auto;
+    padding: 1rem 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.dashboard-overlay-input > label {
+	color: black;
+    vertical-align: top;
+    background-color: var(--background-colour);
+    padding-left: 0rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.dashboard-overlay-input > textarea {
+	border: none;
+    height: 50%;
+    flex-grow: 1;
+    border-radius: 10px;
+    padding: 1rem 1rem;
+}
+
+.side-dashboard {
+	display: flex;
+	flex-direction: column;
+}
+
+#dashboard-add {
+	margin-bottom: 1em;
+}
+
+#manager-navbar {
+	display: none;
+}
