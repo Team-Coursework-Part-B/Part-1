@@ -15,9 +15,23 @@
     <a class="nav-link", href="page.php">Task List</a>
     <a class="nav-link", id="active">Project List</a>
     <a class="nav-link", href="forum.html">Forum</a>
+    <a class="nav-link", id="manager-navbar" href="manager.html">Manager Dashboard</a>
   </div>
 </nav>
 
+   <?php
+
+$isManager = $_POST["email"];
+if  ($isManager == "manager@email.com") {
+	echo '<style type="text/css">
+		#manager-navbar {
+            display: inline;
+        }
+        </style>';
+}	
+
+ ?>
+  
 <main>
   <article>
     <div class="kanban", id="kanban-project">
