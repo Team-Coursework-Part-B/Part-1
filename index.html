@@ -23,7 +23,7 @@ function validateForm() {
 <p>Please Login Below</p>
 
 <body class="MainForm" id="MainForm">
-  <form method="post" action="page.php">
+  <form method="post" action="page.php" onsubmit="return validateForm()">
   
     <div class="FormContainer">
       <label for="email"><b>Email</b></label>
@@ -41,7 +41,7 @@ function validateForm() {
     </div>
   
     <div class="ButtonContainer">
-      <button type="submit" class="LoginButton" onclick="validateForm()">Login</button>
+      <button type="submit" class="LoginButton">Login</button>
     </div>
   </form> 
 </body>
