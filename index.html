@@ -12,10 +12,9 @@
 function validateForm() {
   let E = document.getElementById("email").value;
   let P = document.getElementById("password").value;
-  if ((E == "test@email.com" && P == "p") || (E == "manager@email.com" && P == "manager")) {
-    window.location.replace('page.php'); }
-  else {
-    alert("Incorrect Email/Password")
+  if (!((E == "test@email.com" && P == "p") || (E == "manager@email.com" && P == "manager"))) {
+    alert("Incorrect Email/Password");
+    return false;
   }
 }
 </script>
@@ -24,7 +23,7 @@ function validateForm() {
 <p>Please Login Below</p>
 
 <body class="MainForm" id="MainForm">
-  <form method="post">
+  <form method="post" action="page.php">
   
     <div class="FormContainer">
       <label for="email"><b>Email</b></label>
