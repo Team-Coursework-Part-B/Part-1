@@ -1,0 +1,617 @@
+:root {
+    --background-colour: rgb(240, 240, 240);
+    --main-colour: rgb(240,138,130);
+    --main-colour-hover: rgb(204, 102, 94);
+    --task-border: rgb(168, 168, 168);
+}
+
+h1, h2, h3, a, p, span, button, label, textarea, div {
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    color: black;
+}
+
+a {
+    color: white;
+}
+
+button {
+    border: none;
+    background-color: rgb(17, 24, 39);
+    color: white;
+    border-radius: 10px;
+    padding: 1rem 1rem;
+}
+
+button:hover {
+    background-color: rgb(10, 15, 26);
+    color: rgb(105, 104, 104);
+}
+
+a {
+    text-decoration:none;
+ }
+
+body {
+    background-color: var(--background-colour);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0px;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom: 1px solid var(--main-colour);
+    background-color: var(--main-colour);
+}
+
+nav > .nav-section {
+    display: flex;
+    text-align: center;
+}
+
+#nav-logo-section {
+    padding: 1rem 1rem;
+    width: 7rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#nav-logo-section > img {
+    width: 100%;
+}
+
+#nav-link-section {
+    flex-grow: 1;
+}
+
+.nav-link {
+    flex-basis: calc(100%/3);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3rem 2rem;
+}
+
+.nav-link:hover {
+    background-color: var(--main-colour-hover);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+main {
+    box-sizing: border-box;
+    padding: 1rem 1rem;
+    flex-grow: 1;
+    width: 100%;
+    overflow: hidden;
+}
+
+article {
+    display: flex;
+    gap: 1rem;
+    height: 100%;
+}
+
+.sidebar {
+    width: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-counter {
+   background-color: white;
+   width: 5rem;
+   height: 5rem;
+   border-radius: 25px;
+   display: flex;
+   flex-direction: column;
+}
+
+.sidebar-counter-number {
+    margin: auto;
+    height: 40%;
+}
+
+.sidebar-counter-number > p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.sidebar-counter-label {
+    margin: auto;
+    flex-basis: 50%;
+}
+
+.sidebar > .delegated {
+    border-bottom: none;
+}
+
+.kanban {
+    border: 1px solid white;
+    background-color: white;
+    flex-basis: calc(100%/3);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#kanban-forum {
+  flex-basis: calc(2 * 100%/3);
+}
+
+.kanban-list {
+    height: 100%;
+    display: grid;
+    align-content: start;
+    gap: 1rem;
+    overflow:hidden;
+    overflow-y: auto;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.kanban-title {
+    padding-left: 1.5rem;
+    height: 10%;
+    display: flex;
+}
+
+.kanban-title-heading {
+    width: 70%;
+}
+
+.kanban-title-count {
+    background-color: var(--background-colour);
+    width: rem;
+    border-radius: 10px;
+}
+
+.kanban-title-count > h1 {
+    text-align: center;
+}
+
+.kanban-add {
+    height: 10%;
+    display: flex;
+    padding-bottom: 1rem;
+}
+
+#kanban-add-button {
+    height: 90%;
+    width: 90%;
+    margin: auto;
+    font-size: 35px;
+    padding: 0rem 0rem;
+}
+
+.kanban-title > h1 {
+    color: black;
+    font-size: 30px;
+    padding-bottom: 1rem;
+}
+
+.kanban-item {
+    background-color: var(--background-colour);
+    border-radius: 10px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 5rem;
+    border-bottom: 2px solid var(--task-border);
+    display: flex;
+    overflow-x: hidden;
+}
+
+.personal {
+    background-color: var(--background-colour);
+    border-bottom: 2px solid var(--task-border);
+}
+
+.delegated {
+    background-color: rgb(162,226,255);
+    border-bottom: 2px solid rgb(4,140,196);
+}
+
+.kanban-item-text {
+	padding: 1rem 1rem;
+    overflow-x: hidden;
+	overflow-wrap: break-word;
+    overflow-y: auto;
+    width: 70%;
+}
+
+.kanban-item-text > p {
+	color: black;
+    margin: auto;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.kanban-item-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    justify-content: center;
+    height: 100%;
+    margin-right: 0.5rem;
+    margin-left: auto;
+
+}
+
+.kanban-date-posted, .kanban-item-buttons > .kanban-item-moveDeleteButton {
+    margin-right: 0rem;
+    margin-left: auto;
+}
+
+.kanban-item-button {
+    height: 0.5rem;
+    width: 0.5rem;
+    align-self:center;
+    display: flex;
+    justify-content: center;
+}
+
+.kanban-date-posted, .kanban-item-button > i {
+    align-self: center
+}
+
+.kanban-date-posted {
+  padding-right: 1rem;
+}
+
+.kanban-item-leftRightButtons {
+    display: flex;
+    gap: 0.2rem;
+}
+
+.overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+:root {
+--kanban-item-checkbox-color: #F08A82;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.kanban-item-checkbox {
+  font-family: system-ui, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.1;
+  display: flex;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+  margin-top: 0.5em;
+  margin-left: 1.5rem;
+}
+
+.kanban-item-checkbox + .kanban-item-checkbox {
+  margin-top: 1em;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+
+  display: flex;
+  place-content: center;
+
+  margin-top: 0.2em;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--kanban-item-checkbox-color);
+  /* Windows High Contrast Mode */
+  background-color: CanvasText;
+  margin-top: 0.1em;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+  outline: max(2px, 0.15em) solid currentColor;
+  outline-offset: max(2px, 0.15em);
+}
+
+
+#todo-overlay-box {
+    border-radius: 25px;
+    background-color: var(--background-colour);
+    height: 30%;
+    width: 30%;
+    margin: auto;
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#todo-overlay-box > button {
+    border-radius: 10px;
+}
+
+#todo-overlay-box-loginline {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+#todo-overlay-box-loginline > label {
+    color: black;
+    vertical-align: top;
+    background-color: var(--background-colour);
+    padding-left: 0rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+#todo-overlay-box-loginline > textarea {
+    border: none;
+    height: 100%;
+    flex-grow: 1;
+    border-radius: 10px;
+    padding: 1rem 1rem;
+}
+
+#kanban-project {
+    flex-basis: 100%;
+}
+
+.kanban-project-list {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-content: start;
+    gap: 1rem;
+    overflow:hidden;
+    overflow-y: auto;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.kanban-item-project {
+    width: 100%;
+    height: 15.5rem;
+    display: grid;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 4rem 3rem 5rem 3rem;
+    overflow-x: hidden;
+    background-color: var(--background-colour);
+    border-bottom: 2px solid var(--task-border);
+}
+
+.kanban-project-title {
+    padding-left: 1rem;
+}
+
+.kanban-project-progressBar {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    height: 2rem;
+}
+
+.progressBar {
+    position: relative;
+    width: 100%;
+    height: 2rem;
+    background-color: rgb(17, 24, 39);
+    border-radius: 10px;
+    color: white;
+}
+
+.progressBar::before {
+    content: attr(data-label);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 0.3rem;
+    right: 0.3rem;
+    top: 0.3rem;
+    bottom: 0.3rem;
+    width: calc(var(--width, 0) * 1%);
+    min-width: 1rem;
+    max-width: calc(100% - 0.6rem);
+    border-radius: 10px;
+}
+
+.project::before {
+    background-color: rgb(162,226,255)
+}
+
+.allocation {
+    margin-top: 0.7rem;
+}
+
+.allocation::before {
+    background-color:darkred;
+}
+
+.kanban-project-boxes {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: end;
+    padding-right: 1rem;
+}
+
+.kanban-project-box {
+    width: 6rem;
+    height: 2rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.resource {
+    border: 5px solid rgb(147,101,198);
+}
+
+.resourceBoxClicked {
+    background-color: rgb(147,101,198);
+}
+
+.kanban-project-training {
+    grid-row-start: 3;
+    padding-left: 1rem;
+    border-top: 1px solid var(--task-border);
+    border-bottom: 1px solid var(--task-border);
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.kanban-project-training > p {
+    margin-bottom: 0;
+}
+
+.kanban-project-training > ul {
+    margin-top: 0;
+}
+
+
+.post-overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+
+#post-overlay-box {
+    border-radius: 25px;
+    background-color: var(--background-colour);
+    height: 80%;
+    width: 80%;
+    margin: auto;
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#post-overlay-box > button {
+    border-radius: 10px;
+}
+
+#post-overlay-box-loginline {
+    height: 14%;
+    display: flex;
+    flex-direction: column;
+}
+
+#post-overlay-box-loginline > label, #post-overlay-box-paragraph > label  {
+    color: black;
+    vertical-align: top;
+    background-color: var(--background-colour);
+    padding-left: 0rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+#post-overlay-box-loginline > textarea, #post-overlay-box-paragraph > textarea {
+    border: none;
+    height: 100%;
+    flex-grow: 1;
+    border-radius: 10px;
+    padding: 1rem 1rem;
+}
+
+#post-overlay-box-paragraph {
+	height: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-overlay-box {
+    border-radius: 25px;
+    background-color: var(--background-colour);
+    height: 60%;
+    width: 70%;
+    margin: auto;
+    padding: 1rem 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.dashboard-overlay-input > label {
+	color: black;
+    vertical-align: top;
+    background-color: var(--background-colour);
+    padding-left: 0rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.dashboard-overlay-input > textarea {
+	border: none;
+    height: 50%;
+    flex-grow: 1;
+    border-radius: 10px;
+    padding: 1rem 1rem;
+}
+
+.side-dashboard {
+	display: flex;
+	flex-direction: column;
+}
+
+#dashboard-add {
+	margin-bottom: 1em;
+}
+
+#manager-navbar {
+	display: none;
+}
